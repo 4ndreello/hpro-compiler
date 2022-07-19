@@ -1,4 +1,4 @@
-void findAttributes(std::string input, std::vector<std::string> vetor)
+bool findAttributes(std::string input, std::vector<std::string> vetor)
 {
     for (int i = 0; i < arrFile.size(); i++)
     {
@@ -21,10 +21,15 @@ void findAttributes(std::string input, std::vector<std::string> vetor)
                         obj = "exists";
 
                 if (obj != "exists")
-                    std::cout << "Error: " << att << " is not a valid attribute for text" << std::endl;
+                {
+                    errorLog += att + " is not a valid attribute for " + input;
+                    return false;
+                }
+                    
             }
         }
     }
+    return true;
 }
 
 bool checkForErrors()
@@ -44,15 +49,15 @@ bool checkForErrors()
             syntaxError--;
     }
 
-    // Text text;
-    // Row row;
+    Text text;
+    Button button;
 
-    // std::vector<std::vector<std::string>> c = {text.components};
-    // std::vector<std::string> raw_text = {"text"};
+    std::vector<std::vector<std::string>> c = {text.components, button.components};
+    std::vector<std::string> raw_text = {"text", "button"};
 
-
-    // for(int k = 0; k < c.size(); k++)
-    //     findAttributes(raw_text[k], c[k]);
+    for(int k = 0; k < c.size(); k++)
+        if(findAttributes(raw_text[k], c[k]) == 0)
+            return true;
 
     if (syntaxError != 0)
     {

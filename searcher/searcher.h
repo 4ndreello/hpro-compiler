@@ -74,79 +74,6 @@ bool searchForNum(std::string var)
     return true;
 }
 
-// std::string searchForElement()
-// {
-//     std::string htmlInject;
-//     int y;
-//     bool rowBegin = false, rowEnd = false;
-//     for (int i = 0; i < arrFile.size(); i++)
-//     {
-//         bool booleanGuy = true;
-//         y = i;
-//         std::string str = get_str_between_two_str(arrFile[i], ".", "");
-//         str = std::regex_replace(str, std::regex("\\r\\n|\\r|\\n"), "");
-//         if (arrFile[i].find("Begin") != std::string::npos)
-//         {
-//             // FUTURE..........
-//             if (str.find("rowBegin") != std::string::npos)
-//                 continue;
-
-//             elements.push_back(TrimLeft(eraseSubStr(str, "Begin")));
-//             while (booleanGuy)
-//             {
-//                 y++;
-//                 if (arrFile[y].find("Begin") != std::string::npos || arrFile[y].find("End") != std::string::npos)
-//                 {
-//                     attributes.push_back("|");
-//                     booleanGuy = false;
-//                     break;
-//                 }
-//                 attributes.push_back(TrimLeft(arrFile[y]));
-//             }
-//         }
-//     }
-//     y = -1;
-//     std::string firstG, el;
-
-//     for (int i = 0; i < elements.size(); i++)
-//     {
-//         if (searchForNum(declaredVars[i]))
-//             firstG = declaredVars[i];
-
-//         el = elements[i];
-
-//         // elements[i] = eraseSubStr(elements[i], "*");
-//         // elements[i] = eraseSubStr(elements[i], "&");
-//         elements[i][0] = std::toupper(elements[i][0]);
-//         htmlInject += "\t" + declaredVars[i] + " = new hpro" + elements[i] + "('" + declaredVars[i] + "')\n";
-//         bool booleanGuy = true;
-//         while (booleanGuy)
-//         {
-//             y++;
-//             if (attributes[y].find("|") != std::string::npos)
-//             {
-//                 booleanGuy = false;
-//                 break;
-//             }
-//             else if (attributes[y].find("#id") != std::string::npos)
-//                 continue;
-
-//             std::string att = get_str_between_two_str(attributes[y], "#", " =");
-//             std::string val = get_str_between_two_str(attributes[y], "= ", ";");
-//             val = std::regex_replace(val, std::regex("\\r\\n|\\r|\\n"), "");
-//             htmlInject += "\t" + declaredVars[i] + "." + att + rtnType(att, val) + "\n";
-//         }
-//         if (searchForNum(declaredVars[i]))
-//             htmlInject += "\t" + firstG + ".addElement(" + declaredVars[i] + ")\n";
-//     }
-
-//     for (auto &line : declaredVars)
-//         if (!searchForNum(line))
-//             htmlInject += line + ".show()\n";
-
-//     return htmlInject;
-// }
-
 std::string searchForElement()
 {
     std::string html;
@@ -251,6 +178,13 @@ std::string searchForElement()
 
     std::string firstG, lastG;
     bool booleanGuy = false;
+
+    if(elements.size() != declaredVars.size())
+    {
+        errorLog += "Missing some IDs!";
+        searchBool = true;
+        return "";
+    }
 
     for (int i = 0; i < elements.size(); i++)
     {

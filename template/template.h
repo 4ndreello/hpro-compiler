@@ -67,9 +67,9 @@ bool generateTemplate()
             str = std::regex_replace(str,
                                      std::regex("\\r\\n|\\r|\\n"),
                                      "");
-                
-            for(auto &line : declaredVars)
-                if(line == str)
+
+            for (auto &line : declaredVars)
+                if (line == str)
                 {
                     errorLog += str + " already declared\n";
                     return false;
@@ -86,9 +86,9 @@ bool generateTemplate()
 
     templateHeader += searchForElement();
 
-    debug("done! ");
+    debug("done!");
 
-    if(searchBool)
+    if (searchBool)
         return false;
 
     templateHeader += "}\nformCreate()\nformPrepare()\nif(functionExists(\"formLoad\")) eval(\"formLoad()\")\n";

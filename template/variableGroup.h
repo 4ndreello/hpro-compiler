@@ -6,6 +6,14 @@ struct Group
                                                  "verticalCenter", "visible", "width"};
 };
 
+struct Button
+{
+    const std::vector<std::string> components = {"text", "onclick", "disabled",
+                                                 "label", "width", "height",
+                                                 "size", "container", "visible", "hAlign"
+                                                 "vAlign", "id"};
+};
+
 struct Text
 {
     const std::vector<std::string> components = {"id","bold", "caption", "datatype", "field",
