@@ -6,7 +6,7 @@ bool configGenerator(std::string path)
     if (!input_file.is_open())
     {
         std::ofstream output_file("config.cfg");
-        output_file << introHPro + " - Configuration" + "\n\nsrc=\"default\"";
+        output_file << "# " + introHPro + " - Configuration" + "\n\nsrc=\"default\"";
         if (!output_file.is_open())
         {
             errorLog += "Failed to create config file!\n";
