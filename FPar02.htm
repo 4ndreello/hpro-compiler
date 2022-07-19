@@ -25,16 +25,27 @@
 </head>
 <body style="height:100%"></body>
 <script>
-let g1
-let LPar
-function formCreate() {
+let g1let EUsrlet EPwdlet BLogfunction formCreate() {
 g1 = new hproGroup("g1")
-	g1.title("Parcelas")
+	g1.title("Login")
+	g1.resize = "false"
 g1.rowBegin()
-LPar = new hproText("LPar")
-	LPar.text("Parcelas")
-	LPar.bold = true
-	g1.addElement(LPar)
+EUsr = new hproEdit("EUsr")
+	EUsr.label = "Usuário"
+	EUsr.maxlength = 3
+	EUsr.size = "PM"
+	g1.addElement(EUsr)
+g1.rowEnd()
+g1.rowBegin()
+EPwd = new hproEdit("EPwd")
+	EPwd.label = "Senha"
+	EPwd.size = "PM"
+	EPwd.datatype = "password"
+	g1.addElement(EPwd)
+BLog = new hproButton("BLog")
+	BLog.caption("Login")
+	BLog.onclick = "BLogClick()"
+	g1.addElement(BLog)
 g1.rowEnd()
 g1.show()
 }

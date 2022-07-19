@@ -19,7 +19,7 @@ bool findAttributes(std::string input, std::vector<std::string> vetor)
                 for (auto &l : vetor)
                     if (contains(arrFile[y], l))
                         obj = "exists";
-
+                    
                 if (obj != "exists")
                 {
                     errorLog += att + " is not a valid attribute for " + input;

@@ -3,54 +3,37 @@ std::string rtnType(std::string e, std::string v)
     std::string arrOfValues;
     v = v.substr(0, v.size() - 1);
 
+    std::string on_som = (" = \"" + v + "()" + "\"");
+
     std::string typeOne = (" = \"" + v + "\""); // = "X"
     std::string typeTwo = "(\"" + v + "\")";    // ("X")
     std::string typeThree = (" = " + v);        // = X
     std::string typeFour = ("(" + v + ") ");    // (X)
 
     std::vector<std::string> n = {
-        "text",
-        typeTwo,
-        "container",
-        typeOne,
-        "fontSize",
-        typeOne,
-        "resize",
-        typeThree,
-        "title",
-        typeTwo,
-        "width",
-        typeOne,
-        "value",
-        typeOne,
-        "label",
-        typeOne,
-        "size",
-        typeOne,
-        "datatype",
-        typeOne,
-        "name",
-        typeOne,
-        "onclick",
-        typeOne,
-        "checked",
-        typeFour,
-        "required",
-        typeThree,
-        "disabled",
-        typeThree,
-        "field",
-        typeOne,
-        "caption",
-        typeTwo,
-        "bold",
-        typeThree,
-        "expanded",
-        typeThree,
-        "height",
-        typeOne,
-        "src",
-        typeOne};
+        "text", typeTwo, 
+        "container", typeOne,
+        "fontSize", typeOne,
+        "resize", typeThree,
+        "title", typeTwo,
+        "width", typeOne,
+        "value", typeOne,
+        "label", typeOne,
+        "size", typeOne,
+        "datatype", typeOne,
+        "name", typeOne,
+        "onclick", on_som,
+        "checked", typeFour,
+        "required", typeThree,
+        "disabled", typeThree,
+        "field", typeOne,
+        "caption", typeTwo,
+        "bold", typeThree,
+        "expanded", typeThree,
+        "height", typeOne,
+        "src", typeOne,
+        "maxlength", typeThree
+    };
 
     for (int i = 0; i < n.size(); i += 2)
         if (e.find(n[i]) != std::string::npos)
@@ -58,7 +41,8 @@ std::string rtnType(std::string e, std::string v)
 
     if (arrOfValues == "")
     {
-        return "$" + e;
+        errorLog += e + " is not a valid attribute";
+        return "";
     }
 
     return arrOfValues;
@@ -213,6 +197,11 @@ std::string searchForElement()
             std::string val = get_str_between_two_str(attributes[num], "= ", ";");
             std::string var = eraseSubStr(declaredVars[i], "\n");
 
+            if(rtnType(att, val) == "")
+            {
+                searchBool = true;
+                return "";
+            }
             html += "\t" + var + "." + att + rtnType(att, val) + "\n";
         }
 

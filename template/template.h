@@ -92,12 +92,20 @@ bool generateTemplate()
         return false;
 
     templateHeader += "}\nformCreate()\nformPrepare()\nif(functionExists(\"formLoad\")) eval(\"formLoad()\")\n";
-    templateHeader += "</script>\n</html>\n";
+    templateHeader += "</script>\n</html>";
 
     if (!verifyJS)
     {
-        std::ofstream jsFile(fileName + ".js");
+        time_t now = time(0);
 
+        tm *ltm = localtime(&now);
+
+        std::ofstream jsFile(fileName + ".js");
+        jsFile << "/*********************************   \n"
+                  "HPro Soluções de TI - www.hpro.com.br\n"
+                  "Arquivo: "+ fileName +".js                   \n"
+                  "Criado em: " + std::to_string(ltm->tm_mday) + "/" + std::to_string(1 + ltm->tm_mon) + "/" + std::to_string(1900 + ltm->tm_year) + "\n"
+                  "**********************************/  \n";
         jsFile.close();
     }
 

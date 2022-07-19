@@ -9,6 +9,7 @@ int debugCall = 0;
 std::string fileName;
 std::string errorLog;
 std::string file;
+std::string pathToSave;
 std::string introHPro = "HPro Compiler v0.1";
 
 std::vector<std::string> arrFile;

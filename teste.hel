@@ -1,11 +1,26 @@
 .groupBegin
    #id = g1
-   #title = Parcelas
+   #title = Login
+   #resize = false
    .rowBegin
-      .textBegin
-         #id = LPar
-         #text = Parcelas
-         #bold = true
-      .textEnd
+      .editBegin
+         #id = EUsr
+         #label = Usuário
+         #maxlength = 3
+         #size = PM
+      .editEnd  
+   .rowEnd
+   .rowBegin
+      .editBegin
+         #id = EPwd
+         #label = Senha
+         #size = PM
+         #datatype = password
+      .editEnd
+      .buttonBegin
+         #id = BLog
+         #caption = Login
+         #onclick = BLogClick
+      .buttonEnd
    .rowEnd
 .groupEnd

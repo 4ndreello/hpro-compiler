@@ -8,9 +8,9 @@ struct Group
 
 struct Button
 {
-    const std::vector<std::string> components = {"text", "onclick", "disabled",
-                                                 "label", "width", "height",
-                                                 "size", "container", "visible", "hAlign"
+    const std::vector<std::string> components = {"caption", "onclick", "disabled",
+                                                 "width", "height", "size", 
+                                                 "container", "visible", "hAlign",
                                                  "vAlign", "id"};
 };
 
