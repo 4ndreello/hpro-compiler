@@ -1,0 +1,11 @@
+.groupBegin
+   #id = g1
+   #title = Parcelas
+   .rowBegin
+      .textBegin
+         #id = LPar
+         #text = Parcelas
+         #bold = true
+      .textEnd
+   .rowEnd
+.groupEnd
