@@ -27,7 +27,7 @@ bool configGenerator(std::string path)
     
     if(pathToSave == "")
     {
-        std::cout << "No source path was found in config.cfg! Re-run\n";
+        std::cout << "No source path was found in config.cfg! Re-run";
         return true;
     }
     return false;
