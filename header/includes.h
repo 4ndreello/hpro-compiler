@@ -11,7 +11,6 @@
 #include <cctype>
 #include <ctime>
 
-
 // Alt files
 #include "../core/vars.h"
 #include "../debugger/debugger.h"

@@ -1,26 +1,54 @@
 .groupBegin
    #id = g1
-   #title = Login
-   #resize = false
+   #title = Enviar Whatsapp
    .rowBegin
       .editBegin
-         #id = EUsr
-         #label = Usuário
-         #maxlength = 3
+         #id = g
+         #label = Whatsapp com DDD
+         #maxlength = 12
          #size = PM
-      .editEnd  
-   .rowEnd
-   .rowBegin
-      .editBegin
-         #id = EPwd
-         #label = Senha
-         #size = PM
-         #datatype = password
       .editEnd
-      .buttonBegin
-         #id = BLog
-         #caption = Login
-         #onclick = BLogClick
-      .buttonEnd
    .rowEnd
+   .buttonBegin
+      #id = BEnv
+      #caption = Enviar WPP
+   .buttonEnd
+.groupEnd
+
+.groupBegin
+   #id = g2
+   #title = Enviar Torpedo
+   #expanded = false
+   #resize = true
+   .rowBegin
+      .editBegin
+         #id = xxx
+         #label = Whatsapp com DDD
+         #maxlength = 12
+         #size = PM
+      .editEnd
+   .rowEnd
+   .buttonBegin
+      #id = BEnx
+      #caption = Enviar WPP
+   .buttonEnd
+.groupEnd
+
+.groupBegin
+   #id = g3
+   #title = Enviar SMS
+   #expanded = false
+   #resize = true
+   .rowBegin
+      .editBegin
+         #id = gxx
+         #label = Whatsapp com DDD
+         #maxlength = 12
+         #size = PM
+      .editEnd
+   .rowEnd
+   .buttonBegin
+      #id = BExv
+      #caption = Enviar WPP
+   .buttonEnd
 .groupEnd

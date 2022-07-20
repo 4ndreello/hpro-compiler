@@ -8,7 +8,6 @@ std::string eraseSubStr(std::string &mainStr, const std::string &toErase)
     return mainStr;
 }
 
-
 bool contains(std::string var, std::string sub)
 {
     if (var.find(sub) != std::string::npos)
