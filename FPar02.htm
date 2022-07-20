@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<title>HPro Solu&ccedil;&otilde;es de TI</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="hpro.css">
+<link rel="stylesheet" type="text/css" href="agGrid.css">
+<link rel="stylesheet" type="text/css" href="agGridTheme.css">
+<script src="scripts/hproDialog.js"></script>
+<script src="scripts/hproFunction.js"></script>
+<script src="scripts/hproMenu.js"></script>
+<script src="scripts/hproButton.js"></script>
+<script src="scripts/hproCheckBox.js"></script>
+<script src="scripts/hproEdit.js"></script>
+<script src="scripts/hproGrid.js"></script>
+<script src="scripts/agGrid.js"></script>
+<script src="scripts/hproGroup.js"></script>
+<script src="scripts/hproRadioButton.js"></script>
+<script src="scripts/hproImage.js"></script>
+<script src="scripts/hproText.js"></script>
+<script src="scripts/hproChoice.js"></script>
+<script src="scripts/rotinas.js"></script>
+<script src="scripts/FPar02.js"></script>
+</head>
+<body style="height:100%"></body>
+<script>
+let g1let EUsrlet EPwdlet BLoglet Ctitlfunction formCreate() {
+g1 = new hproGroup("g1")
+	g1.title("Login")
+	g1.resize = "false"
+g1.rowBegin()
+EUsr = new hproEdit("EUsr")
+	EUsr.label = "Usuário"
+	EUsr.maxlength = 3
+	EUsr.size = "PM"
+	g1.addElement(EUsr)
+g1.rowEnd()
+g1.rowBegin()
+EPwd = new hproEdit("EPwd")
+	EPwd.label = "Senha"
+	EPwd.size = "PM"
+	EPwd.datatype = "password"
+	g1.addElement(EPwd)
+BLog = new hproButton("BLog")
+	BLog.caption("Login")
+	BLog.onclick = "BLogClick()"
+	g1.addElement(BLog)
+Ctitl = new hproCheckBox("Ctitl")
+	Ctitl.text = "Teste"
+	g1.addElement(Ctitl)
+g1.rowEnd()
+g1.show()
+}
+formCreate()
+formPrepare()
+if(functionExists("formLoad")) eval("formLoad()")
+</script>
+</html>

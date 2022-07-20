@@ -22,5 +22,9 @@
          #caption = Login
          #onclick = BLogClick
       .buttonEnd
+      .checkBoxBegin
+         #id = Ctitl
+         #text = Teste
+      .checkBoxEnd
    .rowEnd
 .groupEnd

@@ -12,9 +12,10 @@ bool configGenerator(std::string path)
             errorLog += "Failed to create config file!\n";
             return true;
         }
+        output_file.close();
     }
-
-    while (getline(input_file, line))
+    std::ifstream input("config.cfg");
+    while (getline(input, line))
         if (line.find("src=") != std::string::npos)
         {
             src = std::regex_replace(line.substr(line.find("=") + 1), std::regex("\"|\""), "");
@@ -26,9 +27,8 @@ bool configGenerator(std::string path)
     
     if(pathToSave == "")
     {
-        std::cout << "No source path was found in config.cfg!\n";
+        std::cout << "No source path was found in config.cfg! Re-run\n";
         return true;
     }
-    
     return false;
 }

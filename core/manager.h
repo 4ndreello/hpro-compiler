@@ -51,9 +51,10 @@ bool checkForErrors()
 
     Text text;
     Button button;
+    Edit edit;
 
-    std::vector<std::vector<std::string>> c = {text.components, button.components};
-    std::vector<std::string> raw_text = {"text", "button"};
+    std::vector<std::vector<std::string>> c = {text.components, button.components, edit.components};
+    std::vector<std::string> raw_text = {"text", "button", "edit"};
 
     for(int k = 0; k < c.size(); k++)
         if(findAttributes(raw_text[k], c[k]) == 0)
