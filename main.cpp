@@ -1,6 +1,3 @@
-#define EMPRESA HPro Soluções em TI
-#define AUTHOR Gabriel Andreello
-
 #include "header/includes.h"
 
 int main(int argc, char **argv)
@@ -29,9 +26,7 @@ int main(int argc, char **argv)
     clock_t start = clock();
 
     if (generateTemplate())
-    {
         std::cout << "Successfully generated!" << std::endl;
-    }
     else
     {
         std::cout << "Failed to generate template!\nReason(s): " << errorLog << std::endl;

@@ -14,6 +14,15 @@ struct Button
                                                  "vAlign", "id"};
 };
 
+struct Edit
+{
+    const std::vector<std::string> components = {"container", "visible", "hAlign",
+                                                 "vAlign", "id", "disabled",
+                                                 "width", "height", "size",
+                                                 "label", "maxlength", "text"
+                                                 };
+};
+
 struct Text
 {
     const std::vector<std::string> components = {"id","bold", "caption", "datatype", "field",

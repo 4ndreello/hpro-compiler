@@ -25,29 +25,51 @@
 </head>
 <body style="height:100%"></body>
 <script>
-let g1let EUsrlet EPwdlet BLogfunction formCreate() {
+let g1let glet BEnvlet g2let xxxlet BEnxlet g3let gxxlet BExvfunction formCreate() {
 g1 = new hproGroup("g1")
-	g1.title("Login")
-	g1.resize = "false"
+	g1.title("Enviar Whatsapp")
 g1.rowBegin()
-EUsr = new hproEdit("EUsr")
-	EUsr.label = "Usuário"
-	EUsr.maxlength = 3
-	EUsr.size = "PM"
-	g1.addElement(EUsr)
+g = new hproEdit("g")
+	g.label = "Whatsapp com DDD"
+	g.maxlength = 12
+	g.size = "PM"
+	g1.addElement(g)
 g1.rowEnd()
-g1.rowBegin()
-EPwd = new hproEdit("EPwd")
-	EPwd.label = "Senha"
-	EPwd.size = "PM"
-	EPwd.datatype = "password"
-	g1.addElement(EPwd)
-BLog = new hproButton("BLog")
-	BLog.caption("Login")
-	BLog.onclick = "BLogClick()"
-	g1.addElement(BLog)
 g1.rowEnd()
+BEnv = new hproButton("BEnv")
+	BEnv.caption("Enviar WPP")
+	g1.addElement(BEnv)
 g1.show()
+g2 = new hproGroup("g2")
+	g2.title("Enviar Torpedo")
+	g2.expanded = false
+	g2.resize = "true"
+g2.rowBegin()
+xxx = new hproEdit("xxx")
+	xxx.label = "Whatsapp com DDD"
+	xxx.maxlength = 12
+	xxx.size = "PM"
+	g2.addElement(xxx)
+g2.rowEnd()
+BEnx = new hproButton("BEnx")
+	BEnx.caption("Enviar WPP")
+	g2.addElement(BEnx)
+g2.show()
+g3 = new hproGroup("g3")
+	g3.title("Enviar SMS")
+	g3.expanded = false
+	g3.resize = "true"
+g3.rowBegin()
+gxx = new hproEdit("gxx")
+	gxx.label = "Whatsapp com DDD"
+	gxx.maxlength = 12
+	gxx.size = "PM"
+	g3.addElement(gxx)
+g3.rowEnd()
+BExv = new hproButton("BExv")
+	BExv.caption("Enviar WPP")
+	g3.addElement(BExv)
+g3.show()
 }
 formCreate()
 formPrepare()

@@ -3,7 +3,7 @@ std::string rtnType(std::string e, std::string v)
     std::string arrOfValues;
     v = v.substr(0, v.size() - 1);
 
-    std::string on_som = (" = \"" + v + "()" + "\"");
+    std::string on_som = (" = \"" + v + "()" + "\""); // For functions()
 
     std::string typeOne = (" = \"" + v + "\""); // = "X"
     std::string typeTwo = "(\"" + v + "\")";    // ("X")
@@ -51,10 +51,8 @@ std::string rtnType(std::string e, std::string v)
 bool searchForNum(std::string var)
 {
     for (int i = 1; i < 10; i++)
-    {
         if (var.find("g" + std::to_string(i)) != std::string::npos)
             return false;
-    }
     return true;
 }
 
