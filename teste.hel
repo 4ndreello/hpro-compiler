@@ -1,54 +1,40 @@
 .groupBegin
    #id = g1
-   #title = Enviar Whatsapp
-   .rowBegin
-      .editBegin
-         #id = g
-         #label = Whatsapp com DDD
-         #maxlength = 12
-         #size = PM
-      .editEnd
-   .rowEnd
-   .buttonBegin
-      #id = BEnv
-      #caption = Enviar WPP
-   .buttonEnd
-.groupEnd
-
-.groupBegin
-   #id = g2
-   #title = Enviar Torpedo
-   #expanded = false
    #resize = true
+   #title = Usuário - Inclusão
+   #expanded = true
    .rowBegin
-      .editBegin
-         #id = xxx
-         #label = Whatsapp com DDD
-         #maxlength = 12
-         #size = PM
-      .editEnd
+   .textBegin
+      #id = LTit
+      #text = Cadastro de Usuários
+      #bold = true
+      #fontSize = 15
+   .textEnd
    .rowEnd
-   .buttonBegin
-      #id = BEnx
-      #caption = Enviar WPP
-   .buttonEnd
-.groupEnd
-
-.groupBegin
-   #id = g3
-   #title = Enviar SMS
-   #expanded = false
-   #resize = true
    .rowBegin
-      .editBegin
-         #id = gxx
-         #label = Whatsapp com DDD
-         #maxlength = 12
-         #size = PM
-      .editEnd
+   .editBegin
+      #id = ECod
+      #label = Código
+      #disabled = true
+      #size = P
+      #value = N/D
+      #containerSize = M
+   .editEnd
    .rowEnd
-   .buttonBegin
-      #id = BExv
-      #caption = Enviar WPP
-   .buttonEnd
+   .rowBegin
+   .checkBoxBegin
+      #id = CCli
+      #text = Cliente
+      #size = P
+   .checkBoxEnd
+   // .checkBoxBegin
+   //    #id = CFor
+   //    #text = Fornecedor
+   //    #size = P
+   // .checkBoxEnd
+      .checkBoxBegin
+      #id = CTra
+      #text = Transportadora
+   .checkBoxEnd
+   .rowEnd
 .groupEnd

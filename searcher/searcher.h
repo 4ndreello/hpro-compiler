@@ -1,4 +1,4 @@
-std::string rtnType(std::string e, std::string v)
+std::string rtnType(std::string e, std::string v, std::string isDiff = "")
 {
     std::string arrOfValues;
     v = v.substr(0, v.size() - 1);
@@ -34,6 +34,9 @@ std::string rtnType(std::string e, std::string v)
         "src", typeOne,
         "maxlength", typeThree
     };
+
+    if(isDiff == "CheckBox")
+        return " = \"" + v + "\"";
 
     for (int i = 0; i < n.size(); i += 2)
         if (e.find(n[i]) != std::string::npos)
@@ -133,6 +136,7 @@ std::string searchForElement()
                 existRowEnd = false;
                 continue;
             }
+
             std::string el = eraseSubStr(str, "Begin");
             el[0] = std::toupper(el[0]);
 
@@ -200,7 +204,7 @@ std::string searchForElement()
                 searchBool = true;
                 return "";
             }
-            html += "\t" + var + "." + att + rtnType(att, val) + "\n";
+            html += "\t" + var + "." + att + rtnType(att, val, elements[i]) + "\n";
         }
 
         if (searchForNum(declaredVars[i]))
