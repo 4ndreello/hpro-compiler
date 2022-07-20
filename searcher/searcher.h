@@ -1,4 +1,4 @@
-std::string rtnType(std::string e, std::string v, std::string isDiff = "")
+std::string rtnType(std::string e, std::string v, std::string isDiff)
 {
     std::string arrOfValues;
     v = v.substr(0, v.size() - 1);
@@ -199,7 +199,7 @@ std::string searchForElement()
             std::string val = get_str_between_two_str(attributes[num], "= ", ";");
             std::string var = eraseSubStr(declaredVars[i], "\n");
 
-            if(rtnType(att, val) == "")
+            if(rtnType(att, val, elements[i]) == "")
             {
                 searchBool = true;
                 return "";
