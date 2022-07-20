@@ -98,6 +98,30 @@ std::string searchForElement()
             groupElements.push_back(id);
         }
 
+       if (contains(str, "rowSeparator"))
+        {
+            bool goodBoolean = true;
+            int z = i;
+            std::string id;
+            while (goodBoolean)
+            {
+                z--;
+                if (contains(arrFile[z], "Begin"))
+                {
+                    goodBoolean = false;
+                    break;
+                }
+                if (contains(arrFile[z], "#id"))
+                {
+                    id = TrimLeft(arrFile[z]);
+                    break;
+                }
+            }
+            id = get_str_between_two_str(id, "= ", ";");
+            groupSeparator.push_back(id);
+        }
+
+
         if (contains(str, "Begin") || existRowEnd)
         {
             if (contains(str, "rowBegin"))
@@ -191,10 +215,9 @@ std::string searchForElement()
         for (int k = 0; k < attributes.size(); k++)
         {
             num++;
-            if (attributes[num] == "|")
-                break;
-            if (contains(attributes[num], "#id"))
-                continue;
+            if (attributes[num] == "|") break;
+            if (contains(attributes[num], "#id")) continue;
+
             std::string att = get_str_between_two_str(attributes[num], "#", " =");
             std::string val = get_str_between_two_str(attributes[num], "= ", ";");
             std::string var = eraseSubStr(declaredVars[i], "\n");
@@ -213,6 +236,10 @@ std::string searchForElement()
         for (auto &line : rowElements)
             if (contains(line, declaredVars[i]))
                 html += firstG + ".rowEnd()\n";
+
+        for(auto &line : groupSeparator )
+            if(contains(line, declaredVars[i]))
+                html += firstG + ".rowSeparator()\n";
 
         for (auto &line : groupElements)
             if (contains(line, declaredVars[i]))

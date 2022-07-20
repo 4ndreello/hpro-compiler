@@ -1,63 +1,17 @@
 .groupBegin
    #id = g1
-   #title = Enviar Whatsapp
+   .rowBegin
+      .textBegin
+         #id = LTest
+         #text = Olá! Como está?
+         #bold = true
+      .textEnd
+   .rowEnd
+   .rowSeparator
    .rowBegin
       .editBegin
-         #id = g
-         #label = Whatsapp com DDD
-         #maxlength = 12
-         #size = PM
-      .editEnd
-      .buttonBegin
-         #id = BLog
-         #caption = Login
-         #onclick = BLogClick
-      .buttonEnd
-      .checkBoxBegin
-         #id = Ctitl
-         #text = Teste
-      .checkBoxEnd
-   .rowEnd
-   .buttonBegin
-      #id = BEnv
-      #caption = Enviar WPP
-   .buttonEnd
-.groupEnd
-
-.groupBegin
-   #id = g2
-   #title = Enviar Torpedo
-   #expanded = false
-   #resize = true
-   .rowBegin
-      .editBegin
-         #id = xxx
-         #label = Whatsapp com DDD
-         #maxlength = 12
-         #size = PM
+         #id = EDix
+         #label = Edit!!
       .editEnd
    .rowEnd
-   .buttonBegin
-      #id = BEnx
-      #caption = Enviar WPP
-   .buttonEnd
-.groupEnd
-
-.groupBegin
-   #id = g3
-   #title = Enviar SMS
-   #expanded = false
-   #resize = true
-   .rowBegin
-      .editBegin
-         #id = gxx
-         #label = Whatsapp com DDD
-         #maxlength = 12
-         #size = PM
-      .editEnd
-   .rowEnd
-   .buttonBegin
-      #id = BExv
-      #caption = Enviar WPP
-   .buttonEnd
 .groupEnd

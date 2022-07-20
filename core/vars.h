@@ -19,3 +19,4 @@ std::vector<std::string> attributes;
 std::vector<std::string> elements;
 std::vector<std::string> rowElements;
 std::vector<std::string> groupElements;
+std::vector<std::string> groupSeparator;

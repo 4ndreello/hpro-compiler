@@ -60,11 +60,11 @@ bool checkForErrors()
         if(findAttributes(raw_text[k], c[k]) == 0)
             return true;
 
-    if (syntaxError != 0)
-    {
-        errorLog += "Syntax error!\n";
-        return true;
-    }
+    // if (syntaxError != 0)
+    // {
+    //     errorLog += "Syntax error!\n";
+    //     return true;
+    // }
     return false;
 }
 

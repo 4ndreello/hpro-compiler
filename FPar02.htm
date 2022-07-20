@@ -25,30 +25,19 @@
 </head>
 <body style="height:100%"></body>
 <script>
-let g1let EUsrlet EPwdlet BLoglet Ctitlfunction formCreate() {
+let g1let LTestlet EDixfunction formCreate() {
 g1 = new hproGroup("g1")
-	g1.title("Login")
-	g1.resize = "false"
 g1.rowBegin()
-EUsr = new hproEdit("EUsr")
-	EUsr.label = "Usuário"
-	EUsr.maxlength = 3
-	EUsr.size = "PM"
-	g1.addElement(EUsr)
+LTest = new hproText("LTest")
+	LTest.text("Olá! Como está?")
+	LTest.bold = true
+	g1.addElement(LTest)
 g1.rowEnd()
+g1.rowSeparator()
 g1.rowBegin()
-EPwd = new hproEdit("EPwd")
-	EPwd.label = "Senha"
-	EPwd.size = "PM"
-	EPwd.datatype = "password"
-	g1.addElement(EPwd)
-BLog = new hproButton("BLog")
-	BLog.caption("Login")
-	BLog.onclick = "BLogClick()"
-	g1.addElement(BLog)
-Ctitl = new hproCheckBox("Ctitl")
-	Ctitl.text = "Teste"
-	g1.addElement(Ctitl)
+EDix = new hproEdit("EDix")
+	EDix.label = "Edit!!"
+	g1.addElement(EDix)
 g1.rowEnd()
 g1.show()
 }
