@@ -46,13 +46,9 @@ bool generateTemplate()
             topImports[i].erase(topImports[i].size() - 1, '\n');
             topImports[i].erase(0, 1);
             if (topImports[i].find(".js") != std::string::npos)
-            {
                 templateHeader += "<script src=\"scripts/" + topImports[i] + "\"></script>\n";
-            }
             else if (topImports[i].find(".css") != std::string::npos)
-            {
                 templateHeader += "<link rel=\"stylesheet\" type=\"text/css\" href=\"" + topImports[i] + "\">\n";
-            }
         }
     }
     debug("topImports() done!");
@@ -64,9 +60,7 @@ bool generateTemplate()
         if (arrFile[i].find("#id") != std::string::npos)
         {
             std::string str = get_str_between_two_str(arrFile[i], "= ", ";");
-            str = std::regex_replace(str,
-                                     std::regex("\\r\\n|\\r|\\n"),
-                                     "");
+            str = std::regex_replace(str, std::regex("\\r\\n|\\r|\\n"), "");
 
             for (auto &line : declaredVars)
                 if (line == str)
@@ -97,14 +91,17 @@ bool generateTemplate()
     if (!verifyJS)
     {
         time_t now = time(0);
-
+        std::string mes;
         tm *ltm = localtime(&now);
+
+        if((1 + ltm->tm_mon) <= 9) mes = "0" + std::to_string(1 + ltm->tm_mon);
+        else mes = std::to_string(1 + ltm->tm_mon);
 
         std::ofstream jsFile(fileName + ".js");
         jsFile << "/*********************************   \n"
                   "HPro Soluções de TI - www.hpro.com.br\n"
                   "Arquivo: "+ fileName +".js                   \n"
-                  "Criado em: " + std::to_string(ltm->tm_mday) + "/" + std::to_string(1 + ltm->tm_mon) + "/" + std::to_string(1900 + ltm->tm_year) + "\n"
+                  "Criado em: " + std::to_string(ltm->tm_mday) + "/" + mes + "/" + std::to_string(1900 + ltm->tm_year) + "\n"
                   "**********************************/  \n";
         jsFile.close();
     }
