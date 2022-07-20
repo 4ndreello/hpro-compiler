@@ -1,78 +1,0 @@
-<!DOCTYPE HTML>
-<html lang="pt-br">
-<head>
-<meta charset="utf-8">
-<title>HPro Solu&ccedil;&otilde;es de TI</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="hpro.css">
-<link rel="stylesheet" type="text/css" href="agGrid.css">
-<link rel="stylesheet" type="text/css" href="agGridTheme.css">
-<script src="scripts/hproDialog.js"></script>
-<script src="scripts/hproFunction.js"></script>
-<script src="scripts/hproMenu.js"></script>
-<script src="scripts/hproButton.js"></script>
-<script src="scripts/hproCheckBox.js"></script>
-<script src="scripts/hproEdit.js"></script>
-<script src="scripts/hproGrid.js"></script>
-<script src="scripts/agGrid.js"></script>
-<script src="scripts/hproGroup.js"></script>
-<script src="scripts/hproRadioButton.js"></script>
-<script src="scripts/hproImage.js"></script>
-<script src="scripts/hproText.js"></script>
-<script src="scripts/hproChoice.js"></script>
-<script src="scripts/rotinas.js"></script>
-<script src="scripts/FPar02.js"></script>
-</head>
-<body style="height:100%"></body>
-<script>
-let g1let glet BEnvlet g2let xxxlet BEnxlet g3let gxxlet BExvfunction formCreate() {
-g1 = new hproGroup("g1")
-	g1.title("Enviar Whatsapp")
-g1.rowBegin()
-g = new hproEdit("g")
-	g.label = "Whatsapp com DDD"
-	g.maxlength = 12
-	g.size = "PM"
-	g1.addElement(g)
-g1.rowEnd()
-g1.rowEnd()
-BEnv = new hproButton("BEnv")
-	BEnv.caption("Enviar WPP")
-	g1.addElement(BEnv)
-g1.show()
-g2 = new hproGroup("g2")
-	g2.title("Enviar Torpedo")
-	g2.expanded = false
-	g2.resize = "true"
-g2.rowBegin()
-xxx = new hproEdit("xxx")
-	xxx.label = "Whatsapp com DDD"
-	xxx.maxlength = 12
-	xxx.size = "PM"
-	g2.addElement(xxx)
-g2.rowEnd()
-BEnx = new hproButton("BEnx")
-	BEnx.caption("Enviar WPP")
-	g2.addElement(BEnx)
-g2.show()
-g3 = new hproGroup("g3")
-	g3.title("Enviar SMS")
-	g3.expanded = false
-	g3.resize = "true"
-g3.rowBegin()
-gxx = new hproEdit("gxx")
-	gxx.label = "Whatsapp com DDD"
-	gxx.maxlength = 12
-	gxx.size = "PM"
-	g3.addElement(gxx)
-g3.rowEnd()
-BExv = new hproButton("BExv")
-	BExv.caption("Enviar WPP")
-	g3.addElement(BExv)
-g3.show()
-}
-formCreate()
-formPrepare()
-if(functionExists("formLoad")) eval("formLoad()")
-</script>
-</html>
