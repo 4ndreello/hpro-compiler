@@ -121,7 +121,6 @@ std::string searchForElement()
             groupSeparator.push_back(id);
         }
 
-
         if (contains(str, "Begin") || existRowEnd)
         {
             if (contains(str, "rowBegin"))
