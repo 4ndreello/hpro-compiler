@@ -25,21 +25,36 @@
 </head>
 <body style="height:100%"></body>
 <script>
-let g1let LTestlet EDixfunction formCreate() {
+let g1let LInflet ESerlet gfunction formCreate() {
 g1 = new hproGroup("g1")
+	g1.title("MDF-e")
+	g1.resize = "true"
 g1.rowBegin()
-LTest = new hproText("LTest")
-	LTest.text("Olá! Como está?")
-	LTest.bold = true
-	g1.addElement(LTest)
+LInf = new hproText("LInf")
+	LInf.text("Informações do manifesto")
+	LInf.bold = true
+	LInf.fontSize = "15"
+	g1.addElement(LInf)
+ESer = new hproEdit("ESer")
+	ESer.label = "Série"
+	g1.addElement(ESer)
 g1.rowEnd()
-g1.rowSeparator()
 g1.rowBegin()
-EDix = new hproEdit("EDix")
-	EDix.label = "Edit!!"
-	g1.addElement(EDix)
+g = new hproGrid("g")
+	g.addButton("Butão");
+	g.title("Valor Total")
+	g.field = "tot"
+	g1.addElement(g)
 g1.rowEnd()
 g1.show()
+	gColumn = new hproGridColumn()
+	gColumn.title = "Valor Total"
+	gColumn.field = "tot"
+	g1.addElement(gColumn)
+	gColumn = new hproGridColumn()
+	gColumn.title = "Peso Bruto"
+	gColumn.field = "peb"
+	g1.addElement(gColumn)
 }
 formCreate()
 formPrepare()

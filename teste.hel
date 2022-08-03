@@ -1,17 +1,31 @@
 .groupBegin
    #id = g1
+   #title = MDF-e
+   #resize = true
    .rowBegin
       .textBegin
-         #id = LTest
-         #text = Olá! Como está?
+         #id = LInf
+         #text = Informações do manifesto
          #bold = true
+         #fontSize = 15
       .textEnd
-   .rowEnd
-   .rowSeparator
-   .rowBegin
       .editBegin
-         #id = EDix
-         #label = Edit!!
-      .editEnd
+         #id = ESer
+         #label = Série
+      .editEnd  
+   .rowEnd
+   .rowBegin
+      .gridBegin
+         #id = g
+         #button = Butão
+         .gridColumnBegin
+            #title = Valor Total
+            #field = tot
+         .gridColumnEnd
+         .gridColumnBegin
+            #title = Peso Bruto
+            #field = peb
+         .gridColumnEnd
+      .gridEnd
    .rowEnd
 .groupEnd

@@ -18,5 +18,6 @@
 #include "../core/config.h"
 #include "../template/variableGroup.h"
 #include "../core/manager.h"
+#include "../searcher/gridGenerator.h"
 #include "../searcher/searcher.h"
 #include "../template/template.h"

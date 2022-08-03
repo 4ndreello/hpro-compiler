@@ -57,6 +57,11 @@ bool generateTemplate()
     templateHeader += "<script>\n";
     for (int i = 0; i < arrFile.size(); i++)
     {
+        if(arrFile[i].find("gridColumnBegin") != std::string::npos)
+        {
+            declaredVars.push_back("gColumn");
+        }
+
         if (arrFile[i].find("#id") != std::string::npos)
         {
             std::string str = get_str_between_two_str(arrFile[i], "= ", ";");
@@ -91,17 +96,20 @@ bool generateTemplate()
     if (!verifyJS)
     {
         time_t now = time(0);
-        std::string mes;
+        std::string mes, dia;
         tm *ltm = localtime(&now);
 
         if((1 + ltm->tm_mon) <= 9) mes = "0" + std::to_string(1 + ltm->tm_mon);
         else mes = std::to_string(1 + ltm->tm_mon);
 
+        if(ltm->tm_mday <= 9) dia = "0" + std::to_string(ltm->tm_mday);
+        else mes = std::to_string(ltm->tm_mday);
+
         std::ofstream jsFile(fileName + ".js");
         jsFile << "/*********************************   \n"
                   "HPro Soluções de TI - www.hpro.com.br\n"
                   "Arquivo: "+ fileName +".js                   \n"
-                  "Criado em: " + std::to_string(ltm->tm_mday) + "/" + mes + "/" + std::to_string(1900 + ltm->tm_year) + "\n"
+                  "Criado em: " + dia + "/" + mes + "/" + std::to_string(1900 + ltm->tm_year) + "\n"
                   "**********************************/  \n";
         jsFile.close();
     }
